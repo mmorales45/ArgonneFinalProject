@@ -45,3 +45,66 @@ Accessing cameras of MiR base
 1. export ROS_MASTER_URI=http://192.168.12.20:11311
 
 2. rqt_image_view
+
+
+## For the Arm
+
+### UR5e
+```
+roslaunch ur_robot_driver ur5e_bringup.launch robot_ip:=192.168.12.248 s
+rosservice call /ur_hardware_interface/dashboard/brake_release
+rosservice call /ur_hardware_interface/dashboard/play
+roslaunch ur5_moveit_config ur5_moveit_planning_execution.launch
+rosrun argonne_final_project test_node
+rosservice call /step_left
+```
+
+
+
+
+iP OF UR16e
+
+192.168.12.243
+
+## Controlling the arms from one computer
+
+```
+roslaunch argonne_final_project launch_all.launch
+```
+
+### Two routes Pendant or terminal
+
+#### Pendant 
+
+On each robot, start the robots from off to running. Bottom right corner -> start 
+
+Then press play on the run tab of the program. THis loads the last script that was loaded for each arm. If the the script is void or not externalControl, find it and run it
+
+#### All from Terminal
+
+For each arm, start the robot by running the services below but make sure that before running the second file, that the first one reaches RUNNING mode.
+```
+rosservice call /UR5e/ur_hardware_interface/dashboard/brake_release
+rosservice call /UR16e/ur_hardware_interface/dashboard/brake_release
+```
+
+Then press play to run the last script for each arm.
+
+```
+rosservice call /UR5e/ur_hardware_interface/dashboard/play
+rosservice call /UR16e/ur_hardware_interface/dashboard/play
+```
+
+To pause the arms, run the services below
+
+```
+rosservice call /UR5e/ur_hardware_interface/dashboard/pause
+rosservice call /UR16e/ur_hardware_interface/dashboard/pause
+```
+
+To power off the robot, run the services below
+
+```
+rosservice call /UR5e/ur_hardware_interface/dashboard/power_off
+rosservice call /UR16e/ur_hardware_interface/dashboard/power_off
+```
