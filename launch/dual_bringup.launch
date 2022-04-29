@@ -2,7 +2,7 @@
 <launch>
   <!--ur5e's arguments-->
   <arg name="ur5e_kinematics" default="$(find ur_description)/config/ur5e/default_kinematics.yaml"/>
-  <arg name="ur5e_controller_config_file" default="$(find argonne_final_project)/config/ur5e_ur_controllers.yaml"/>
+  <arg name="ur5e_controller_config_file" default="$(find argonne_final_project)/config/ur5e_controllers.yaml"/>
   <arg name="ur5e_ip" default="192.168.12.248"/>
   <arg name="ur5e_reverse_port" default="50001"/>
   <arg name="ur5e_script_sender_port" default="50002"/>
@@ -12,7 +12,7 @@
 
   <!--ur16e's arguments-->
   <arg name="ur16e_kinematics" default="$(find ur_description)/config/ur16e/default_kinematics.yaml"/>
-  <arg name="ur16e_controller_config_file" default="$(find argonne_final_project)/config/ur16e_ur_controllers.yaml"/>
+  <arg name="ur16e_controller_config_file" default="$(find argonne_final_project)/config/ur16e_controllers.yaml"/>
   <arg name="ur16e_ip" default="192.168.12.243"/>
   <arg name="ur16e_reverse_port" default="50004"/>
   <arg name="ur16e_script_sender_port" default="50005"/>
