@@ -5,8 +5,8 @@
   <xacro:include filename="$(find ur_description)/urdf/inc/ur16e_macro.xacro"/>
 
   <!--Instanciate the robots-->
-  <xacro:ur16e_robot prefix="UR16e_" kinematics_parameters_file="$(arg UR16e_kinematics)"/>
-  <xacro:ur5e_robot prefix="UR5e_" kinematics_parameters_file="$(arg UR5e_kinematics)" />
+  <xacro:ur16e_robot prefix="ur16e_" kinematics_parameters_file="$(arg UR16e_kinematics)"/>
+  <xacro:ur5e_robot prefix="ur5e_" kinematics_parameters_file="$(arg UR5e_kinematics)" />
 
   <!--common link where the tf tree originates from-->
   <link name="world_2"/>
