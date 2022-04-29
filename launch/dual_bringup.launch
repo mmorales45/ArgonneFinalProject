@@ -25,7 +25,9 @@
   <!-- <arg name="controllers" default="joint_state_controller scaled_pos_joint_traj_controller speed_scaling_state_controller force_torque_sensor_controller" doc="Controllers that are activated by default."/> -->
   <!-- <arg name="stopped_controllers" default="pos_joint_traj_controller joint_group_vel_controller" doc="Controllers that are initally loaded, but not started."/> -->
 
-  <include file="$(find sdl_robot_description)/launch/load_sdl_dual_arm.launch">
+   <include file="$(find argonne_final_project)/launch/load_both_arms_v2.launch">
+    <arg name="UR5e_kinematics" value="$(arg UR5e_kinematics)"/>
+    <arg name="UR16e_kinematics" value="$(arg UR16e_kinematics)"/>
   </include>
 
   <group ns="ur5e">
