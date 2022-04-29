@@ -26,8 +26,6 @@
   <!-- <arg name="stopped_controllers" default="pos_joint_traj_controller joint_group_vel_controller" doc="Controllers that are initally loaded, but not started."/> -->
 
    <include file="$(find argonne_final_project)/launch/load_both_arms_v2.launch">
-    <arg name="UR5e_kinematics" value="$(arg UR5e_kinematics)"/>
-    <arg name="UR16e_kinematics" value="$(arg UR16e_kinematics)"/>
   </include>
 
   <group ns="ur5e">
